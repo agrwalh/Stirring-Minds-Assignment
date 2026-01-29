@@ -41,11 +41,8 @@ const FloatingCard = ({ icon: Icon, title, discount, className, delay = 0 }: any
 export const HeroVisuals = () => {
     return (
         <div className="relative w-full h-[400px] md:h-[600px] flex items-center justify-center perspective-1000">
-            {/* Abstract Animated Glows */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-500/20 rounded-full blur-[80px] animate-pulse" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-purple-500/20 rounded-full blur-[60px] translate-x-10 -translate-y-10" />
-
-            {/* Floating Cards Stack */}
             <FloatingCard
                 icon={Database}
                 title="AWS Credits"

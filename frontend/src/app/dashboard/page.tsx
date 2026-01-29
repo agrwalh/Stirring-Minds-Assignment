@@ -40,7 +40,6 @@ export default function DashboardPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20 container mx-auto px-4 lg:px-8">
-            {/* Profile Header - Premium Card Style */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -77,8 +76,6 @@ export default function DashboardPage() {
                     </div>
                 </div>
             </motion.div>
-
-            {/* Claims Section */}
             <div className="flex items-center justify-between mb-8">
                 <h2 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
                     <span className="w-1 h-6 bg-blue-500 rounded-full mr-2" />

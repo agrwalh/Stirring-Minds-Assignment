@@ -17,7 +17,6 @@ interface DealCardProps {
 const DealCard: React.FC<DealCardProps> = ({ deal, isAuthenticated, userVerified }) => {
     const isLocked = deal.isLocked && (!isAuthenticated || !userVerified);
 
-    // Calculate days left
     const daysLeft = Math.ceil((new Date(deal.expiryDate).getTime() - new Date().getTime()) / (1000 * 3600 * 24));
 
     return (
@@ -29,13 +28,10 @@ const DealCard: React.FC<DealCardProps> = ({ deal, isAuthenticated, userVerified
             className="h-full"
         >
             <TiltCard className="h-full relative group rounded-xl">
-                {/* Glow Effect behind the card */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-30 blur-lg transition duration-500 group-hover:duration-200" />
 
                 <Link href={`/deals/${deal._id}`} className="h-full block">
                     <Card className="h-full flex flex-col overflow-hidden bg-zinc-900/90 border-zinc-800/50 backdrop-blur-xl relative z-10 hover:bg-zinc-900 transition-colors">
-
-                        {/* Image Section */}
                         <div className="relative h-52 w-full overflow-hidden">
                             <Image
                                 src={deal.imageUrl || 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80'}
@@ -47,10 +43,7 @@ const DealCard: React.FC<DealCardProps> = ({ deal, isAuthenticated, userVerified
                                 )}
                             />
 
-                            {/* Overlay Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
-
-                            {/* Top Badges */}
                             <div className="absolute top-3 left-3 flex gap-2">
                                 <div className="bg-black/60 backdrop-blur-md border border-white/10 px-2 py-1 rounded-md text-[10px] uppercase font-bold text-white flex items-center gap-1">
                                     <Tag className="h-3 w-3" /> {deal.category}
@@ -76,8 +69,6 @@ const DealCard: React.FC<DealCardProps> = ({ deal, isAuthenticated, userVerified
                                 )
                             )}
                         </div>
-
-                        {/* Content Section */}
                         <div className="p-5 flex flex-col flex-1">
                             <div className="flex justify-between items-start mb-2">
                                 <h3 className="text-xl font-bold text-white leading-tight group-hover:text-blue-400 transition-colors">
