@@ -25,7 +25,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const router = useRouter();
 
     useEffect(() => {
-        // Check local storage on mount
         const token = localStorage.getItem('token');
         const storedUser = localStorage.getItem('user');
 

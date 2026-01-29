@@ -64,7 +64,7 @@ const deals = [
 const importData = async () => {
     try {
         await Deal.deleteMany();
-        await Claim.deleteMany(); // Clear old claims to prevent orphans
+        await Claim.deleteMany();
         await Deal.insertMany(deals);
 
         console.log('Data Imported!');

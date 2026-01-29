@@ -2,9 +2,6 @@ const User = require('../models/User');
 const generateToken = require('../utils/generateToken');
 const { AppError } = require('../middlewares/errorHandler');
 
-// @desc    Register a new user
-// @route   POST /api/v1/auth/register
-// @access  Public
 const registerUser = async (req, res, next) => {
     try {
         const { name, email, password } = req.body;
@@ -15,7 +12,6 @@ const registerUser = async (req, res, next) => {
             return next(new AppError('User already exists', 400));
         }
 
-        // Business Logic: Auto-verify if email is from a "startup" domain (mock logic)
         const isVerified = email.endsWith('@startup.com') || email.endsWith('@innovate.io');
 
         const user = await User.create({
@@ -42,9 +38,6 @@ const registerUser = async (req, res, next) => {
     }
 };
 
-// @desc    Auth user & get token
-// @route   POST /api/v1/auth/login
-// @access  Public
 const loginUser = async (req, res, next) => {
     try {
         const { email, password } = req.body;

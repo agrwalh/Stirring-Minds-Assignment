@@ -2,7 +2,7 @@
 
 A premium full-stack platform for startup founders to access exclusive SaaS deals, built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Node.js/Express**.
 
-> **Note**: This project strictly adheres to the "Technical Constraints" and "Submission Instructions" provided in the assignment.
+
 
 ## 🚀 Features
 
@@ -107,6 +107,12 @@ The system uses a **Stateless JWT (JSON Web Token)** strategy.
 ```bash
 cd backend
 npm install
+# Create a .env file with:
+# NODE_ENV=development
+# PORT=8000
+# MONGO_URI=mongodb://localhost:27017/startup-benefits
+# JWT_SECRET=your_super_secret_key
+
 npm run seed  # Populates data
 npm run dev   # Runs on port 8000
 ```

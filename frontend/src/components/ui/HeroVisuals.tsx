@@ -59,7 +59,7 @@ export const HeroVisuals = () => {
                 title="Notion Plus"
                 discount="6 Months Free"
                 className="z-20 top-[45%] right-[5%] md:right-[5%]"
-                delay={1.5}
+                delay={1.2}
             />
 
             <FloatingCard
@@ -74,8 +74,9 @@ export const HeroVisuals = () => {
                 icon={Rocket}
                 title="Vercel Pro"
                 discount="3 Months Free"
-                className="z-0 top-[30%] left-[5%] md:left-[10%] scale-90 opacity-60 blur-[1px]"
-                delay={2}
+                className="z-0 top-[30%] left-[5%] md:left-[10%] scale-90 opacity-80"
+
+                delay={1.5}
             />
         </div>
     );

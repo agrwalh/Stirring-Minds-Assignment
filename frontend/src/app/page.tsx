@@ -12,17 +12,14 @@ import { BackgroundBeams } from '@/components/ui/BackgroundBeams';
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-zinc-950">
-      {/* Hero Section with Aurora/Spotlight Vibe */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden container mx-auto px-4">
 
         <BackgroundBeams className="z-0 pointer-events-none opacity-40" />
 
-        {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/10 blur-[120px] rounded-full opacity-50 pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[100px] rounded-full opacity-30 pointer-events-none" />
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column: Text */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -62,7 +59,6 @@ export default function LandingPage() {
             </div>
           </motion.div>
 
-          {/* Right Column: Visuals */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -74,7 +70,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Social Proof Marquee - DISTINCT SECTION */}
       <section className="py-16 bg-zinc-950/80 backdrop-blur-md border-y border-white/5 shadow-2xl relative z-20">
         <div className="container mx-auto px-4 mb-8 text-center">
           <p className="text-sm font-medium text-zinc-500 uppercase tracking-widest">Trusted by founders from YC, Techstars, and more</p>
@@ -86,9 +81,7 @@ export default function LandingPage() {
         />
       </section>
 
-      {/* Bento Grid Features - DISTINCT SECTION */}
       <section className="py-32 relative z-10 bg-zinc-900/20">
-        {/* Subtle separator gradient */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         <div className="container mx-auto px-4">
@@ -114,7 +107,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section - DISTINCT SECTION */}
       <section className="py-32 relative overflow-hidden bg-gradient-to-t from-blue-900/20 to-zinc-950 border-t border-white/5">
         <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
         <div className="container mx-auto px-4 relative z-10 text-center">
@@ -133,7 +125,6 @@ export default function LandingPage() {
   );
 }
 
-// Dummy Data
 const testimonials = [
   {
     quote: "This platform saved us over $10k in our first month. The AWS credits alone were worth it.",

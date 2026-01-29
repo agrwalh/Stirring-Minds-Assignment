@@ -26,8 +26,6 @@ export default function DealDetailPage() {
         if (savedUser) {
             setUser(JSON.parse(savedUser));
         } else {
-            // Redirect if not logged in? Or just show locked view.
-            // For better UX, let them view but show CTA to login.
         }
 
         if (params.id) {
@@ -55,12 +53,7 @@ export default function DealDetailPage() {
             const res = await api.get('/claims');
             const myClaim = res.data.find((c: any) => c.deal._id === id || c.deal === id);
             if (myClaim && myClaim.deal) {
-                // We need to refetch deal or get code from claim if stored? 
-                // API logic: Claim response returns Code. GetMyClaims populate Deal but maybe not code.
-                // For now assume if claimed, we show "Claimed". Ideal would be to store code in Claim model or return it.
-                // Re-reading logic: Claim endpoint returns code. GetMyClaims might not.
-                // Let's just switch button state to "Claimed".
-                setClaimedCode('REVEALED-CHECK-DASHBOARD'); // Placeholder or logic gap fix
+                setClaimedCode('REVEALED-CHECK-DASHBOARD');
             }
         } catch (err) {
             console.log("Error checking claims", err);
@@ -103,7 +96,7 @@ export default function DealDetailPage() {
             </Button>
 
             <div className="grid md:grid-cols-12 gap-12">
-                {/* Left: Image & Company */}
+
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -155,7 +148,7 @@ export default function DealDetailPage() {
                     </div>
                 </motion.div>
 
-                {/* Right: Details & Action */}
+
                 <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -172,7 +165,7 @@ export default function DealDetailPage() {
                     </div>
 
                     <Card className="mt-auto bg-gradient-to-b from-zinc-900/80 to-zinc-950/80 border-blue-500/20 shadow-[0_0_30px_-10px_rgba(59,130,246,0.15)] relative overflow-hidden backdrop-blur-xl">
-                        {/* Shine effect */}
+
                         <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full pointer-events-none" />
 
                         <div className="relative z-10">

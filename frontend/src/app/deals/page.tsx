@@ -16,7 +16,7 @@ export default function DealsPage() {
     const [user, setUser] = useState<any>(null);
 
     useEffect(() => {
-        // Check auth on mount
+
         const savedUser = localStorage.getItem('user');
         if (savedUser) {
             setUser(JSON.parse(savedUser));
@@ -26,7 +26,7 @@ export default function DealsPage() {
     const fetchDeals = async () => {
         setLoading(true);
         try {
-            // Build query string
+
             const params = new URLSearchParams();
             if (keyword) params.append('keyword', keyword);
             if (category) params.append('category', category);
@@ -41,7 +41,7 @@ export default function DealsPage() {
     };
 
     useEffect(() => {
-        // Debounce search
+
         const timer = setTimeout(() => {
             fetchDeals();
         }, 500);
@@ -52,7 +52,7 @@ export default function DealsPage() {
 
     return (
         <div className="min-h-screen pt-32 pb-20 px-4 container mx-auto">
-            {/* Header & Filters */}
+
             <div className="mb-16 space-y-8 text-center max-w-4xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
@@ -101,7 +101,7 @@ export default function DealsPage() {
                 </div>
             </div>
 
-            {/* Deals Grid */}
+
             {loading ? (
                 <div className="flex justify-center py-32">
                     <Loader2 className="h-12 w-12 animate-spin text-blue-500" />

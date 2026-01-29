@@ -1,9 +1,6 @@
 const Deal = require('../models/Deal');
 const { AppError } = require('../middlewares/errorHandler');
 
-// @desc    Fetch all deals
-// @route   GET /api/v1/deals
-// @access  Public
 const getDeals = async (req, res, next) => {
     try {
         const pageSize = 10;
@@ -27,7 +24,6 @@ const getDeals = async (req, res, next) => {
             }
             : {};
 
-        // Filter by locked status if provided
         const isLocked = req.query.isLocked
             ? { isLocked: req.query.isLocked === 'true' }
             : {};
@@ -43,9 +39,6 @@ const getDeals = async (req, res, next) => {
     }
 };
 
-// @desc    Fetch single deal
-// @route   GET /api/v1/deals/:id
-// @access  Public
 const getDealById = async (req, res, next) => {
     try {
         const deal = await Deal.findById(req.params.id);

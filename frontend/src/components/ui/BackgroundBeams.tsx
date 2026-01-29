@@ -15,7 +15,7 @@ export const BackgroundBeams = ({ className }: { className?: string }) => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-full opacity-20 bg-[radial-gradient(#3b82f680_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)]" />
             </div>
 
-            {/* Moving beams */}
+
             <motion.div
                 animate={{
                     rotate: [0, 360],

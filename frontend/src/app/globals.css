@@ -2,11 +2,11 @@
 
 @theme {
   --color-zinc-950: #020617;
-  /* Slate-950/Black mix for depth */
+
   --color-zinc-900: #0f172a;
-  /* Slate 900 */
+
   --color-zinc-50: #f8fafc;
-  /* Slate 50 */
+
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Cinematic Noise Overlay */
+
 body::before {
   content: "";
   position: fixed;
@@ -29,7 +29,7 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* Deep Space Gradient Background */
+
 body::after {
   content: "";
   position: fixed;
@@ -43,7 +43,7 @@ body::after {
   background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
 }
 
-/* Custom Utilities */
+
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
